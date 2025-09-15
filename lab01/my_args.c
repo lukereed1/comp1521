@@ -9,10 +9,10 @@ int main(int argc, char *argv[]) {
         for (int i = 1; i < argc; i++) {
             printf("\tArgument %d is \"%s\"\n", i, argv[i]);
         }
-        
+
     } else {
         printf("There are no other arguments\n");
     }
 
-	return 0;
+    return 0;
 }
