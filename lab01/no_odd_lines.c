@@ -8,6 +8,7 @@ int main(void) {
 
     while (fgets(s, MAX, stdin) != NULL) {
         int length = strlen(s);
+        
         if (length % 2 == 0) {            
             fputs(s, stdout);
         }        
