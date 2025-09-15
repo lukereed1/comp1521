@@ -2,5 +2,15 @@
 #include <ctype.h>
 
 int main(void) {
-	return 0;
+    char c;
+
+    while (c != EOF) {
+        c = getchar();
+
+        if (isupper(c)) {
+            c = tolower(c);
+        } 
+            
+        putchar(c);
+    }
 }
