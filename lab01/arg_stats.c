@@ -24,13 +24,13 @@ int main(int argc, char *argv[]) {
 
     int mean = sum / (argc - 1);
 
-    printf("MIN: %d\n", min);
-    printf("MAX: %d\n", max);
-    printf("SUM: %d\n", sum);
+    printf("MIN:  %d\n", min);
+    printf("MAX:  %d\n", max);
+    printf("SUM:  %d\n", sum);
     printf("PROD: %d\n", prod);
     printf("MEAN: %d\n", mean);
 
-	return 0;
+    return 0;
 }
 
 int getMin(char* args[], int n) {
@@ -52,7 +52,7 @@ int getMax(char* args[], int n) {
 
     for (int i = 2; i < n; i++) {
         int curr = atoi(args[i]);
-        
+
         if (curr > max) {
             max = curr;
         }
