@@ -9,4 +9,4 @@ main:
 
     .data
 string:
-    asciiz "Well, this was a MIPStake!\n"
+    .asciiz "Well, this was a MIPStake!\n"
