@@ -1,3 +1,7 @@
+# gaussian_sum.s
+# Written by Luke Reed (z5677864)
+# on 16/09/2025
+
 # A simple MIPS program that calculates the Gaussian sum between two numbers
 
 # int main(void)
@@ -67,7 +71,7 @@ main:
     li      $v0, 11
     la      $a0, '\n'
     syscall
-    
+
 	li	    $v0, 0
 	jr	    $ra
 
