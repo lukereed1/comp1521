@@ -1,3 +1,7 @@
+// arg_stats.c
+// Written by Luke Reed (z5677864)
+// on 16/09/2025
+
 #include <stdio.h>
 #include <stdlib.h>
 

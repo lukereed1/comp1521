@@ -1,3 +1,7 @@
+// my_args.c
+// Written by Luke Reed (z5677864)
+// on 16/09/2025
+
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {

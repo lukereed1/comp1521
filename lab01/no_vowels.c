@@ -1,3 +1,7 @@
+// no_vowels.c
+// Written by Luke Reed (z5677864)
+// on 16/09/2025
+
 #include <stdio.h>
 #include <ctype.h>
 
@@ -19,7 +23,7 @@ int isVowel(char c) {
     if (
         tolower(c) == 'a' || tolower(c) == 'e' || tolower(c) == 'i' ||
         tolower(c) == 'o' || tolower(c) == 'u') {
-            
+
         return 1;
     }
 
