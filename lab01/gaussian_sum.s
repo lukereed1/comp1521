@@ -18,16 +18,16 @@
 # }
 
 main:
-	li	$v0, 4
-	la	$a0, prompt1
+	li	    $v0, 4
+	la	    $a0, prompt1
 	syscall
 
-	li	$v0, 5
+	li	    $v0, 5
 	syscall
 	move 	$t0, $v0
 
-	li	$v0, 4
-	la	$a0, prompt2
+	li	    $v0, 4
+	la      $a0, prompt2
 	syscall
 	
 	li	    $v0, 5
@@ -40,32 +40,36 @@ main:
 	MUL 	$t3, $t4, $t3
 	DIV 	$t3, $t3, 2
 	
-	li	$v0, 4
-	la	$a0, answer1
+	li	    $v0, 4
+	la	    $a0, answer1
 	syscall
 
-	li 	$v0, 1
+	li 	    $v0, 1
 	move	$a0, $t0
 	syscall
 
-	li	$v0, 4
-	la	$a0, answer2
+	li	    $v0, 4
+	la	    $a0, answer2
 	syscall
 
-	li 	$v0, 1
+	li 	    $v0, 1
 	move 	$a0, $t1
 	syscall
 
-	li	$v0, 4
-	la	$a0, answer3
+	li	    $v0, 4
+	la	    $a0, answer3
 	syscall
 
-	li	$v0, 1
+	li	    $v0, 1
 	move 	$a0, $t3
 	syscall
 
-	li	$v0, 0
-	jr	$ra
+    li      $v0, 11
+    la      $a0, '\n'
+    syscall
+    
+	li	    $v0, 0
+	jr	    $ra
 
 
 .data
