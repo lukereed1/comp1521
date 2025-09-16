@@ -18,19 +18,18 @@
 # }
 
 main:
+    la      $a0, prompt1
+    li      $v0, 4
+    syscall
 
-  #
-  # TODO: add your code HERE
-  #
-
-  li   $v0, 0
-  jr   $ra          # return
+    li      $v0, 0
+    jr      $ra          # return
 
 
 .data
-  prompt1: .asciiz "Enter first number: "
-  prompt2: .asciiz "Enter second number: "
+    prompt1: .asciiz "Enter first number: "
+    prompt2: .asciiz "Enter second number: "
 
-  answer1: .asciiz "The sum of all numbers between "
-  answer2: .asciiz " and "
-  answer3: .asciiz " (inclusive) is: "
+    answer1: .asciiz "The sum of all numbers between "
+    answer2: .asciiz " and "
+    answer3: .asciiz " (inclusive) is: "
