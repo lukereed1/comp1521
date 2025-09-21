@@ -5,28 +5,30 @@ READ_INT = 5
 
 	.text
 main:
-	li	, PRINT_STRING
-	la	, prompt_msg
+	li	$v0, PRINT_STRING
+	la	$a0, prompt_msg
 	syscall
 
-	li	, READ_INT
+	li	$v0, READ_INT
 	syscall
-	MOVE	, 
+	MOVE	$t0, $v0
 
-	REM 	, , 2
-	BNEZ	, epilogue
+	REM 	$t0, $t0, 2
+	BNEZ	$t0, epilogue
 
-	li	, PRINT_STRING
-	la	, even_msg
+	li	$v0, PRINT_STRING
+	la	$a0, even_msg
 	syscall	
 
 epilogue:
-	li	, 0
-	jr	
+	li	$v0, 0
+	jr	$ra
 
 
 	.data
 prompt_msg:
-	.asciiz Enter a number: 
+	.asciiz "Enter a number: "
 even_msg:
-	.asciiz evenn
+	.asciiz "even\n"
+
+
