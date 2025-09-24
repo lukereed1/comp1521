@@ -37,7 +37,7 @@ first_loop_top_body:
 		b 		second_loop_condition # goto second_loop_condition;
 first_loop_bottom_body:
 		li 		$v0, PRINT_INT # printf("%d", total);
-		li 		$a0, total
+		li 		$a0, $t3
 		syscall
 
 		li 		$v0, PRINT_CHAR # printf('\n');
