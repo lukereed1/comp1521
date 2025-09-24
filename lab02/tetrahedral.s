@@ -11,6 +11,7 @@
 PRINT_INT = 1
 PRINT_CHAR = 11
 PRINT_STRING = 4
+
  # $t0 = i
  # $t1 = j
  # $t2 = n
