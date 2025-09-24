@@ -9,7 +9,7 @@ int main() {
 
 	printf("Enter how many: ");
 	scanf("%d", &howMany);
-	printf("HOW MANY: %d\n", howMany);
+
 	n = 1;
 
 first_loop_condition:
