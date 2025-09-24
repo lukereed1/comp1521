@@ -10,7 +10,7 @@
 
 PRINT_INT = 1
 PRINT_CHAR = 11
-
+PRINT_STRING = 4
  # $t0 = i
  # $t1 = j
  # $t2 = n
@@ -20,7 +20,7 @@ PRINT_CHAR = 11
 main:				
 
 		la		$a0, prompt # printf("Enter how many: ")
-		li		$v0, t4		
+		li		$v0, PRINT_STRING
 		syscall
 		
 		li		$v0, 5		# scanf("%d", &howMany)
