@@ -69,6 +69,10 @@ UNSET = '#'
 SIZEOF_INT = 4
 SIZEOF_PTR = 4
 SIZEOF_CHAR = 1
+PRINT_INT = 1
+READ_INT = 5
+PRINT_STRING = 4
+PRINT_CHAR = 11
 
 ##########################################################
 # struct board_tracker {				 #
@@ -392,9 +396,9 @@ str_do_enter_success:
 main:
 	# Subset:   0
 	#
-	# Frame:    [...]   <-- FILL THESE OUT!
-	# Uses:     [...]
-	# Clobbers: [...]
+	# Frame:    []   <-- FILL THESE OUT!
+	# Uses:     []
+	# Clobbers: []
 	#
 	# Locals:           <-- FILL THIS OUT!
 	#   - ...
@@ -406,10 +410,8 @@ main:
 	#   -> [epilogue]
 
 main__prologue:
-main__body:
-
-main__epilogue:
-	jr	$ra
+main__body:	
+main__epilogue:	
 
 ###########################
 ## void print_welcome(); ##
@@ -434,9 +436,83 @@ print_welcome:
 	#       -> body
 	#   -> [epilogue]
 
-print_welcome__prologue:
-print_welcome__body:
+print_welcome__prologue:	
+print_welcome__body:	
+	li	$v0, PRINT_STRING	# printf("Welcome to Sudoku!\n");
+	la	$a0, str_print_welcome_1
+	syscall
+	
+	li	$v0, PRINT_STRING	# printf("To enter a number, use: );
+	la	$a0, str_print_welcome_2
+	syscall
+		
+	li	$v0, PRINT_CHAR		# printf(ENTER_KEY) 
+	la	$a0, ENTER_KEY
+	syscall
 
+	li	$v0, PRINT_STRING	# printf(<row> <col> <number>\n");
+	la	$a0, str_print_welcome_3
+	syscall
+
+	li	$v0, PRINT_STRING	# printf("To get a hint, use: ");
+	la	$a0, str_print_welcome_4
+	syscall
+		
+	li	$v0, PRINT_CHAR		# printf(HINT_KEY) 
+	la	$a0, HINT_KEY
+	syscall
+
+	li	$v0, PRINT_CHAR		# printf('\n') 
+	la	$a0, '\n'
+	syscall
+
+	li	$v0, PRINT_STRING	# printf("To see this message again, use:\n");
+	la	$a0, str_print_welcome_5
+	syscall
+		
+	li	$v0, PRINT_CHAR		# printf(HELP_KEY) 
+	la	$a0, HELP_KEY
+	syscall
+
+	li	$v0, PRINT_CHAR		# printf('\n') 
+	la	$a0, '\n'
+	syscall
+
+	li	$v0, PRINT_STRING	# printf("To exit, use: \n");
+	la	$a0, str_print_welcome_6
+	syscall
+		
+	li	$v0, PRINT_CHAR		# printf(EXIT_KEY) 
+	la	$a0, EXIT_KEY
+	syscall
+
+	li	$v0, PRINT_CHAR		# printf('\n') 
+	la	$a0, '\n'
+	syscall
+
+	li	$v0, PRINT_STRING	# printf("You can use up to " );
+	la	$a0, str_print_welcome_7
+	syscall
+		
+	li	$v0, PRINT_INT		# printf(MAX_HINTS) 
+	la	$a0, MAX_HINTS
+	syscall
+
+	li	$v0, PRINT_STRING	# printf(" hints.);
+	la	$a0, str_print_welcome_8
+	syscall		
+
+	li	$v0, PRINT_STRING	# printf("If you make more than %d);
+	la	$a0, str_print_welcome_9
+	syscall		
+
+	li	$v0, PRINT_INT		# printf(MAX_MISTAKES) 
+	la	$a0, MAX_MISTAKES
+	syscall
+
+	li	$v0, PRINT_STRING	# printf(" mistakes, you lose :(\n\n");
+	la	$a0, str_print_welcome_10
+	syscall		
 print_welcome__epilogue:
 	jr	$ra
 
